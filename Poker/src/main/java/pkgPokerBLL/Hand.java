@@ -40,8 +40,6 @@ public class Hand {
 
 		Collections.sort(h.getCardsInHand());
 
-		// Another way to sort
-		// Collections.sort(h.getCardsInHand(), Card.CardRank);
 
 		HandScore hs = new HandScore();
 		try {
@@ -54,10 +52,7 @@ public class Hand {
 
 				Method meth = c.getMethod(hstr.getEvalMethod(), cArg);
 				Object o = meth.invoke(null, new Object[] { h, hs });
-
-				// If o = true, that means the hand evaluated- skip the rest of
-				// the evaluations
-				if ((Boolean) o) {
+	if ((Boolean) o) {
 					break;
 				}
 			}
